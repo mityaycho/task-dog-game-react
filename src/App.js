@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.dogAudioRef = React.createRef();
-  }
+  };
 
   state = {
     randomImageIndex: 4,
@@ -35,7 +35,8 @@ class App extends React.Component {
       key={el}
       index={el}
       randomImageIndex={this.state.randomImageIndex}
-      onClickHandler={this.incCounter} />);
+      onClickHandler={this.incCounter}
+      resetCount={this.resetCount}/>);
     return (
       <div className="App">
         <AudioComponent audioRef={this.dogAudioRef} />
@@ -46,6 +47,6 @@ class App extends React.Component {
       </div>
     );
   };
-};
+}
 
 export default App;

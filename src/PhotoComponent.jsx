@@ -4,7 +4,7 @@ import dogPhoto from './media/dog.jpg';
 
 const PhotoComponent = (props) => {
   let imgClass = props.index === props.randomImageIndex ? "photo show" : "photo";
-  let onClickHandler = props.index === props.randomImageIndex ? props.onClickHandler : () => {};
+  let onClickHandler = props.index === props.randomImageIndex ? props.onClickHandler : props.resetCount;
   return <div className="item" onClick={onClickHandler}><img src={dogPhoto} className={imgClass} /></div>;
 };
 

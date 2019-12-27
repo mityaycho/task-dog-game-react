@@ -1,17 +1,32 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-20deg, #d0b782 20%, #a0cecf 80%);
+}
+
 .counter {
   text-align: center;
+  border: 2px solid gray;
+  border-radius: 50%;
+  padding: 0 5px;
+  font-size: 40px;
+  font-weight: bold;
+  color: gray;
 }
 
 .wrapper {
-  width: 170px;
-  margin: 100px auto 10px auto;
+  width: 285px;
 }
 
 .item {
-  border: 1px solid grey;
+  border: 2px solid grey;
+  margin: 5px;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   text-align: center;
   overflow: hidden;
   display: inline-block;
