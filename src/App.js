@@ -2,6 +2,9 @@ import React from 'react';
 import './App.css';
 import AudioComponent from './AudioComponent';
 import PhotoComponent from './PhotoComponent';
+import {connect} from "react-redux";
+
+
 
 class App extends React.Component {
   constructor(props) {
@@ -56,4 +59,12 @@ class App extends React.Component {
   };
 }
 
-export default App;
+const mapStateToProps = (state) => {
+
+};
+
+const mapDispatchToProps = (dispatch) => {
+
+};
+
+export default connect(mapDispatchToProps)(App);
