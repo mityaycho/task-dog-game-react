@@ -7,6 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.dogAudioRef = React.createRef();
+    this.audioSadRef = React.createRef();
   };
 
   state = {
@@ -30,6 +31,12 @@ class App extends React.Component {
     this.dogAudioRef.current.play();
   };
 
+  resetCount = () => {
+    this.setState({counter: 0});
+    this.audioSadRef.current.currentTime = 0;
+    this.audioSadRef.current.play();
+  };
+
   render() {
     const itemsComponent = this.items.map(el => <PhotoComponent
       key={el}
@@ -39,7 +46,7 @@ class App extends React.Component {
       resetCount={this.resetCount}/>);
     return (
       <div className="App">
-        <AudioComponent audioRef={this.dogAudioRef} />
+        <AudioComponent audioRef={this.dogAudioRef} audioSadRef={this.audioSadRef}/>
         <div className="wrapper">
           {itemsComponent}
         </div>
