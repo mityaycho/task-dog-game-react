@@ -3,7 +3,7 @@ import './App.css';
 import AudioComponent from './AudioComponent';
 import PhotoComponent from './PhotoComponent';
 import {connect} from "react-redux";
-
+import {getRandomImageIndexAC, setCounterAC} from "./redux/reducer";
 
 
 class App extends React.Component {
@@ -19,23 +19,26 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    setInterval(this.getRandomImageIndex, 1000);
+    setInterval(this.getRandomImageIndex, 3000);
   };
 
   items = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
   getRandomImageIndex = () => {
-    this.setState({randomImageIndex: Math.floor(Math.random() * 9)});
+    this.props.getRandomImageIndex();
+    // this.setState({randomImageIndex: Math.floor(Math.random() * 9)});
   };
 
   incCounter = () => {
-    this.setState({counter: this.state.counter + 1});
+    this.props.setCounter(this.props.counter + 1)
+    // this.setState({counter: this.state.counter + 1});
     this.dogAudioRef.current.currentTime = 0;
     this.dogAudioRef.current.play();
   };
 
   resetCount = () => {
-    this.setState({counter: 0});
+    this.props.setCounter(0)
+    // this.setState({counter: 0});
     this.audioSadRef.current.currentTime = 0;
     this.audioSadRef.current.play();
   };
@@ -44,7 +47,7 @@ class App extends React.Component {
     const itemsComponent = this.items.map(el => <PhotoComponent
       key={el}
       index={el}
-      randomImageIndex={this.state.randomImageIndex}
+      randomImageIndex={this.props.randomImageIndex}
       onClickHandler={this.incCounter}
       resetCount={this.resetCount}/>);
     return (
@@ -53,7 +56,7 @@ class App extends React.Component {
         <div className="wrapper">
           {itemsComponent}
         </div>
-        <div className="counter">{this.state.counter}</div>
+        <div className="counter">{this.props.counter}</div>
       </div>
     );
   };
@@ -65,7 +68,16 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => {
-
+  return {
+    getRandomImageIndex() {
+      const action = getRandomImageIndexAC();
+      dispatch(action);
+    },
+    setCounter(counter) {
+      const action = setCounterAC(counter);
+      dispatch(action);
+    }
+  }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
