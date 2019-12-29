@@ -30,14 +30,14 @@ class App extends React.Component {
   };
 
   incCounter = () => {
-    this.props.setCounter(this.props.counter + 1)
+    this.props.setCounter(this.props.counter);
     // this.setState({counter: this.state.counter + 1});
     this.dogAudioRef.current.currentTime = 0;
     this.dogAudioRef.current.play();
   };
 
   resetCount = () => {
-    this.props.setCounter(0)
+    this.props.setCounter(-1);
     // this.setState({counter: 0});
     this.audioSadRef.current.currentTime = 0;
     this.audioSadRef.current.play();
