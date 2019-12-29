@@ -3,7 +3,7 @@ import './App.css';
 import AudioComponent from './AudioComponent';
 import PhotoComponent from './PhotoComponent';
 import {connect} from "react-redux";
-import {getRandomImageIndexAC, setCounterAC} from "./redux/reducer";
+import {getRandomImageIndexAC, resetCounterAC, setCounterAC} from "./redux/reducer";
 
 
 class App extends React.Component {
@@ -13,32 +13,24 @@ class App extends React.Component {
     this.audioSadRef = React.createRef();
   };
 
-  state = {
-    randomImageIndex: 4,
-    counter: 0
-  };
-
   componentDidMount() {
-    setInterval(this.getRandomImageIndex, 3000);
+    setInterval(this.getRandomImageIndex, 1000);
   };
 
   items = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
   getRandomImageIndex = () => {
     this.props.getRandomImageIndex();
-    // this.setState({randomImageIndex: Math.floor(Math.random() * 9)});
   };
 
   incCounter = () => {
     this.props.setCounter(this.props.counter);
-    // this.setState({counter: this.state.counter + 1});
     this.dogAudioRef.current.currentTime = 0;
     this.dogAudioRef.current.play();
   };
 
   resetCount = () => {
-    this.props.setCounter(-1);
-    // this.setState({counter: 0});
+    this.props.resetCounter(0);
     this.audioSadRef.current.currentTime = 0;
     this.audioSadRef.current.play();
   };
@@ -75,6 +67,10 @@ const mapDispatchToProps = (dispatch) => {
     },
     setCounter(counter) {
       const action = setCounterAC(counter);
+      dispatch(action);
+    },
+    resetCounter(counter) {
+      const action = resetCounterAC(counter);
       dispatch(action);
     }
   }
