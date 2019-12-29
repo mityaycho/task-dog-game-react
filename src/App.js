@@ -59,12 +59,13 @@ class App extends React.Component {
   };
 }
 
-const mapStateToProps = (state) => {
-
-};
+const mapStateToProps = (state) => ({
+  randomImageIndex: state.randomImageIndex,
+  counter: state.counter
+});
 
 const mapDispatchToProps = (dispatch) => {
 
 };
 
-export default connect(mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
