@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import AudioComponent from './AudioComponent';
 import PhotoComponent from './PhotoComponent';
-import {connect} from "react-redux";
-import {getRandomImageIndexAC, resetCounterAC, setCounterAC} from "./redux/reducer";
+import {connect} from 'react-redux';
+import {getRandomImageIndexAC, resetCounterAC, setCounterAC} from './redux/reducer';
 
 
 class App extends React.Component {
