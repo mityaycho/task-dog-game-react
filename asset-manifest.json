@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/task-dog-game-react/static/css/main.c6668c33.chunk.css",
+    "main.js": "/task-dog-game-react/static/js/main.8dec57db.chunk.js",
+    "main.js.map": "/task-dog-game-react/static/js/main.8dec57db.chunk.js.map",
+    "runtime-main.js": "/task-dog-game-react/static/js/runtime-main.d26e22e4.js",
+    "runtime-main.js.map": "/task-dog-game-react/static/js/runtime-main.d26e22e4.js.map",
+    "static/js/2.caef6169.chunk.js": "/task-dog-game-react/static/js/2.caef6169.chunk.js",
+    "static/js/2.caef6169.chunk.js.map": "/task-dog-game-react/static/js/2.caef6169.chunk.js.map",
+    "index.html": "/task-dog-game-react/index.html",
+    "precache-manifest.d78e814e4a0ed313194cfe2060ac80bb.js": "/task-dog-game-react/precache-manifest.d78e814e4a0ed313194cfe2060ac80bb.js",
+    "service-worker.js": "/task-dog-game-react/service-worker.js",
+    "static/css/main.c6668c33.chunk.css.map": "/task-dog-game-react/static/css/main.c6668c33.chunk.css.map",
+    "static/media/dog.mp3": "/task-dog-game-react/static/media/dog.75fa68d4.mp3",
+    "static/media/sad-dog.mp3": "/task-dog-game-react/static/media/sad-dog.0092a09f.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d26e22e4.js",
+    "static/js/2.caef6169.chunk.js",
+    "static/css/main.c6668c33.chunk.css",
+    "static/js/main.8dec57db.chunk.js"
+  ]
+}
